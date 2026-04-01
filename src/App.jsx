@@ -1,9 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
 import { Cpu, Database, RefreshCcw, Lock, Globe, Key, ShieldCheck, BadgeCheck, Code, Server, Zap } from 'lucide-react';
+
+
+const Card = ({ className = '', ...props }) => <div className={`rounded-xl border ${className}`.trim()} {...props} />;
+
+const CardHeader = ({ className = '', ...props }) => <div className={className} {...props} />;
+
+const CardTitle = ({ className = '', ...props }) => <h2 className={className} {...props} />;
+
+const CardContent = ({ className = '', ...props }) => <div className={className} {...props} />;
+
+const Input = ({ className = '', ...props }) => (
+  <input
+    className={`w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-500/50 ${className}`.trim()}
+    {...props}
+  />
+);
+
+const Label = ({ className = '', ...props }) => <label className={className} {...props} />;
+
+const Button = ({ className = '', type = 'button', ...props }) => (
+  <button type={type} className={`inline-flex items-center justify-center rounded-md px-4 py-2 ${className}`.trim()} {...props} />
+);
 
 /**
  * Missouri Document Discriminator (DD) Logic Simulator v3.5
